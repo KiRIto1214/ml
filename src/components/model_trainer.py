@@ -53,10 +53,17 @@ class ModelTrainer:
                      "K-Neighbors" : KNeighborsRegressor(),
                      }
 
+            """
+            for applying hyperparameter tuning apply u can add another parameter to
+            evaluate_models that is dictionary of grid of all hyperparameters
+            then u use grid/random search cv in utils.py i.e by changing
+            """
+            
             model_report:dict=evaluate_models(x_train=x_train,y_train=y_train,x_test=x_test,
             y_test=y_test,models=models)
 
-
+            
+ 
             best_model_score = max(sorted(model_report.values()))
 
             best_model_name = list(model_report.keys())[
