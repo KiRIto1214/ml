@@ -10,14 +10,14 @@ application=Flask(__name__)
 app=application
 
 ## Route for a home page
-#http://127.0.0.1:5000/predictdata
+#http://127.0.0.1:5000/
 
-@app.route('/')
-def index():
+# @app.route('/')
+# def index():
 
-    return render_template('index.html') 
+#     return render_template('index.html') 
 
-@app.route('/predictdata',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def predict_datapoint():
 
     if request.method=='GET':
